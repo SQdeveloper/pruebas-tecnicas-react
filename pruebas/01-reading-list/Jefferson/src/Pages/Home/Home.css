@@ -1,0 +1,30 @@
+.home {
+    display: flex;
+    gap: 1rem;
+    width: 100%;    
+    padding: 1.5rem;
+    background-color: rgb(11,11,11);
+}
+
+.books {    
+    flex: 1;
+    height: fit-content;    
+    color: rgb(194, 193, 193);
+}
+
+.reading-list {
+    min-width: 12rem;
+    border-radius: .5rem;
+    padding: .2rem .5rem;
+    color: white;
+    background-color: rgba(255,255,255,.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.books ul {
+    display: grid;
+    width: 100%;
+    gap: .5rem;
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+}
