@@ -1,11 +1,7 @@
 import React from 'react';
 import './Book.css';
 
-const Book = ({url, title, index, setReadingList}) => {
-    
-    const addToReadingList = ()=>{
-        setReadingList(index)
-    }
+const Book = ({url,deleteReadingList , updateReadingList, addButton}) => {        
 
     return (
         <li className='card'>
@@ -13,8 +9,13 @@ const Book = ({url, title, index, setReadingList}) => {
                 <img src={url} alt="background" />
             </div>
            <div className="buttons">
-                <button onClick={addToReadingList}>View</button>
-                <button onClick={addToReadingList}>Add to list</button>
+                <button>View</button>
+                {
+                    addButton ? 
+                    <button onClick={updateReadingList}>Add to list</button>
+                    :
+                    <button onClick={deleteReadingList}>Delete</button>
+                }
            </div>
         </li>
     );

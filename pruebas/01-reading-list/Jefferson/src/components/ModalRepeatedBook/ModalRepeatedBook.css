@@ -1,0 +1,18 @@
+.modalRepeatedBook {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 40rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: white;
+    border-radius: .4rem;
+}
+
+.modalRepeatedBook button {
+    margin-top: 1rem;
+    padding: .2rem .5rem;
+
+}
