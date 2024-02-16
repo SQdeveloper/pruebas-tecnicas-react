@@ -1,13 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Book.css';
 
-const Book = ({url,deleteReadingList , updateReadingList, addButton}) => {        
-
+const Book = ({url, deleteReadingList, code, updateReadingList, addButton}) => {        
     return (
         <li className='card'>
-            <div className="cont-img">
-                <img src={url} alt="background" />
-            </div>
+            <Link to={`/book/${code}`}>
+                <div className="cont-img">
+                    <img src={url} alt="background" />
+                </div>
+            </Link>
            <div className="buttons">
                 <button>View</button>
                 {

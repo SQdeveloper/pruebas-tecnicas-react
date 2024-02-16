@@ -1,14 +1,20 @@
 import { useState } from 'react';
-import './App.css'
 import Header from './components/Header/Header'
 import Home from './Pages/Home/Home';
+import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import PageBook from './Pages/PageBook/PageBook';
 
 function App() {  
-
   return (
     <>
+    <BrowserRouter>
       <Header/>
-      <Home/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/book/:id' element={<PageBook/>}/>
+      </Routes>        
+    </BrowserRouter>
     </>
   )
 }

@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import useBooks from '../../Hooks/useBooks';
 import Book from '../../components/Book/Book';
 import useLocalStorage from '../../Hooks/useLocalStorage';
-import './Home.css';
 import ModalRepeatedBook from '../../components/ModalRepeatedBook/ModalRepeatedBook';
+import './Home.css';
+import { BookContext } from '../../components/Context/BookContextProvider';
 
-const Home = () => {
-    const books = useBooks();        
+const Home = () => {    
+    const books = useContext(BookContext);
     const [readingList, setReadingList] = useLocalStorage('readingList', []);
     const [openModalRepeatedBook, setOpenModalRepeatedBook] = useState(false);
 
@@ -40,7 +41,7 @@ const Home = () => {
                 <ul>
                     {books.length > 0 &&
                         books.map((book,index)=>(                            
-                            <Book key={index} updateReadingList={()=>{updateReadingList(index)}} addButton={true} title={book.book.title} url={book.book.cover}/>                            
+                            <Book key={index} code={book.book.ISBN} updateReadingList={()=>{updateReadingList(index)}} addButton={true} title={book.book.title} url={book.book.cover}/>                            
                     ))}
                 </ul>
             </section>
@@ -49,7 +50,7 @@ const Home = () => {
                 <ul>
                     {readingList.length > 0 &&
                         readingList.map((book,index)=>(
-                            <Book key={index} deleteReadingList={()=>{deleteReadingList(index)}} addButton={false} title={book.book.title} url={book.book.cover}/>
+                            <Book key={index} code={book.book.ISBN} deleteReadingList={()=>{deleteReadingList(index)}} addButton={false} title={book.book.title} url={book.book.cover}/>
                     ))}
                 </ul>
             </section>

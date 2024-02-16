@@ -1,0 +1,25 @@
+.pageBook {
+    display: flex;
+    gap: 1.5rem;
+    width: 100%;
+    padding: 1.5rem;
+    background-color: rgb(21,21,21);
+    color: white;
+    min-height: 100vh;
+}
+
+.pageBook-img {    
+    max-width: 35%;
+}
+
+.pageBook-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.pageBook-info li {
+    display: flex;
+    gap: .8rem;
+    align-items: center;
+}
